@@ -1,0 +1,13 @@
+<header>
+  <div class="header-logo">
+    <h3>User management</h3>
+  </div>
+
+  <div class="header-nav">
+    <a [routerLink]="'home'">HOME</a>
+    <a *ngIf="isLoggedIn" [routerLink]="'/dashboard'">DASHBOARD</a
+    ><a *ngIf="!isLoggedIn" [routerLink]="'login'">LOGIN</a>
+    <a *ngIf="isLoggedIn" (click)="onLogout()">LOGOUT</a>
+  </div>
+</header>
+
