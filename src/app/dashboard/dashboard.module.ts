@@ -5,18 +5,19 @@ import { TaskDetailsComponent } from './task-details/task-details.component';
 import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from '../app-routing.module';
-import { LoaderComponent } from '../Utility/loader/loader.component';
+
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from '../shared.module';
 
 @NgModule({
-  declarations: [
+  declarations: [DashboardComponent, CreateTaskComponent, TaskDetailsComponent],
+  exports: [
     DashboardComponent,
     CreateTaskComponent,
     TaskDetailsComponent,
-    LoaderComponent,
+    SharedModule,
   ],
-  exports: [DashboardComponent, CreateTaskComponent, TaskDetailsComponent],
-  imports: [CommonModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [CommonModule, SharedModule],
 })
 export class DashBoardModule {}
