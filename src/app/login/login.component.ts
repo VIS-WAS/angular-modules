@@ -42,7 +42,7 @@ export class LoginComponent {
     this.authObs.subscribe({
       next: (res) => {
         this.isLoading = false;
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/dashboard/overview']);
       },
       error: (errMSG) => {
         this.isLoading = false;

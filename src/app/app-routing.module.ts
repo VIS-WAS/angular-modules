@@ -4,7 +4,8 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { canActivate } from './RouteGaurds/authGaurd';
-
+import { OverviewComponent } from './dashboard/overview/overview.component';
+import { StatsComponent } from './dashboard/stats/stats.component';
 
 const routes: Routes = [
   {
@@ -17,8 +18,18 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    component: DashboardComponent,
+
     canActivate: [canActivate],
+    children: [
+      {
+        path: 'overview',
+        component: OverviewComponent,
+      },
+      {
+        path: 'stats',
+        component: StatsComponent,
+      },
+    ],
   },
   {
     path: 'login',

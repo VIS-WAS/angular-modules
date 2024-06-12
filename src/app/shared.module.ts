@@ -7,13 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [LoaderComponent, SnackbarComponent],
-  exports: [
-    LoaderComponent,
-    SnackbarComponent,
-    FormsModule,
-    AppRoutingModule,
-    HttpClientModule,
-  ],
-  imports: [FormsModule, AppRoutingModule, HttpClientModule],
+  exports: [LoaderComponent, SnackbarComponent, FormsModule, HttpClientModule],
+  imports: [FormsModule, HttpClientModule],
 })
 export class SharedModule {}

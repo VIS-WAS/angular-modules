@@ -9,15 +9,23 @@ import { AppRoutingModule } from '../app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from '../shared.module';
+import { OverviewComponent } from './overview/overview.component';
+import { StatsComponent } from './stats/stats.component';
 
 @NgModule({
-  declarations: [DashboardComponent, CreateTaskComponent, TaskDetailsComponent],
+  declarations: [
+    DashboardComponent,
+    CreateTaskComponent,
+    TaskDetailsComponent,
+    OverviewComponent,
+    StatsComponent,
+  ],
   exports: [
     DashboardComponent,
     CreateTaskComponent,
     TaskDetailsComponent,
     SharedModule,
   ],
-  imports: [CommonModule, SharedModule],
+  imports: [CommonModule, SharedModule, AppRoutingModule],
 })
 export class DashBoardModule {}

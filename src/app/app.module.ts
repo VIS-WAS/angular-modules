@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-// import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { FooterComponent } from './footer/footer.component';
@@ -23,7 +23,7 @@ import { DashBoardModule } from './dashboard/dashboard.module';
     HomeComponent,
     LoginComponent,
   ],
-  imports: [BrowserModule, DashBoardModule],
+  imports: [BrowserModule, DashBoardModule, AppRoutingModule],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
