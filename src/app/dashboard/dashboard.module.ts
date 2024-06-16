@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from '../shared.module';
 import { OverviewComponent } from './overview/overview.component';
 import { StatsComponent } from './stats/stats.component';
+import { canActivate } from '../RouteGaurds/authGaurd';
+import { DashboardRouterModule } from './dashboard-routing.module';
 
 @NgModule({
   declarations: [
@@ -21,10 +23,11 @@ import { StatsComponent } from './stats/stats.component';
     StatsComponent,
   ],
   exports: [
-    DashboardComponent,
-    CreateTaskComponent,
-    TaskDetailsComponent,
+    // DashboardComponent,
+    // CreateTaskComponent,
+    // TaskDetailsComponent,
     SharedModule,
+    DashboardRouterModule,
   ],
   imports: [CommonModule, SharedModule, AppRoutingModule],
 })
