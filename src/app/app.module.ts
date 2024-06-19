@@ -9,10 +9,8 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { AuthInterceptorService } from './Services/auth-interceptor.service';
-import { LoggingInterceptorService } from './Services/logging-interceptor.service';
 import { DashBoardModule } from './dashboard/dashboard.module';
+import { CoreModule } from './core.module';
 
 @NgModule({
   declarations: [
@@ -23,19 +21,8 @@ import { DashBoardModule } from './dashboard/dashboard.module';
     HomeComponent,
     LoginComponent,
   ],
-  imports: [BrowserModule, DashBoardModule, AppRoutingModule],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptorService,
-      multi: true,
-    },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: LoggingInterceptorService,
-      multi: true,
-    },
-  ],
+  imports: [BrowserModule, DashBoardModule, AppRoutingModule, CoreModule],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

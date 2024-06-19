@@ -12,9 +12,7 @@ import {
 import { User } from '../Model/User';
 import { Router } from '@angular/router';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class AuthService {
   http: HttpClient = inject(HttpClient);
 
