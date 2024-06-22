@@ -10,12 +10,17 @@ import { HomeComponent } from './home/home.component';
 
 import { CoreModule } from './core.module';
 import { HttpClientModule } from '@angular/common/http';
+import { CounterService } from './Services/counter.service';
 // import { AuthModule } from './login/auth.module';
 
 @NgModule({
   declarations: [AppComponent, FooterComponent, HeaderComponent, HomeComponent],
   imports: [BrowserModule, AppRoutingModule, CoreModule, HttpClientModule],
-  providers: [],
+
+  // same instace of this services will be available throught the application
+
+  providers: [CounterService],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}

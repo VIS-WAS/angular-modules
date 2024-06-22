@@ -6,9 +6,11 @@ import {
   Input,
   Output,
   ViewChild,
+  inject,
 } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Task } from 'src/app/Model/task';
+import { CounterService } from 'src/app/Services/counter.service';
 
 @Component({
   selector: 'app-create-task',
@@ -35,6 +37,10 @@ export class CreateTaskComponent implements AfterViewInit {
   @Output()
   EmitTaskData: EventEmitter<Task> = new EventEmitter<Task>();
 
+  counterService: CounterService = inject(CounterService);
+  ngOnInit() {
+    this.counterService.increment('CreateComponent');
+  }
   ngAfterViewInit() {
     // console.log(this.selectedTask);
     setTimeout(() => {

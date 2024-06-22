@@ -9,5 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [LoaderComponent, SnackbarComponent],
   exports: [LoaderComponent, SnackbarComponent, FormsModule, HttpClientModule],
   imports: [FormsModule, HttpClientModule],
+  
 })
 export class SharedModule {}
