@@ -9,11 +9,12 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 
 import { CoreModule } from './core.module';
-import { AuthModule } from './login/auth.module';
+import { HttpClientModule } from '@angular/common/http';
+// import { AuthModule } from './login/auth.module';
 
 @NgModule({
   declarations: [AppComponent, FooterComponent, HeaderComponent, HomeComponent],
-  imports: [BrowserModule, AppRoutingModule, CoreModule, AuthModule],
+  imports: [BrowserModule, AppRoutingModule, CoreModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
