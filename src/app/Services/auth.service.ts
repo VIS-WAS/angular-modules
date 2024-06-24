@@ -11,8 +11,11 @@ import {
 } from 'rxjs';
 import { User } from '../Model/User';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class AuthService {
   http: HttpClient = inject(HttpClient);
 
@@ -28,7 +31,8 @@ export class AuthService {
     const data = { email: email, password: password, returnSecureToken: true };
     return this.http
       .post<AuthResponse>(
-        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCHt5WwI5Q0EgqOHGidOOYdrTJF7BlFWEs',
+        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' +
+          environment.firebaseAPIKEY,
         data
       )
       .pipe(
@@ -43,7 +47,8 @@ export class AuthService {
     const data = { email: email, password: password, returnSecureToken: true };
     return this.http
       .post<AuthResponse>(
-        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCHt5WwI5Q0EgqOHGidOOYdrTJF7BlFWEs',
+        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' +
+          environment.firebaseAPIKEY,
         data
       )
       .pipe(
